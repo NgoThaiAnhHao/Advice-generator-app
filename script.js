@@ -36,6 +36,8 @@ const displayUI = (data) => {
   cardContent.innerHTML = make;
 };
 
+getData();
+
 dice.addEventListener("click", () => {
   getData();
 });
