@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ### Primary */
+
+  --Blue-200-pri: hsl(193, 38%, 86%);
+  --Green-300-pri: hsl(150, 100%, 66%);
+
+  /* ### Neutral */
+
+  --Blue-600: hsl(217, 19%, 38%);
+  --Blue-900: hsl(217, 19%, 24%);
+  --Blue-950: hsl(218, 23%, 16%);
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  position: relative;
+  max-width: 100dvw;
+  max-height: 100dvh;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--Blue-950);
+}
+
+.card-container {
+  position: absolute;
+  width: 45%;
+  height: 45%;
+
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--Blue-900);
+  border-radius: 3rem;
+}
+
+.card__content {
+  width: 100%;
+  height: 85%;
+  gap: 2rem;
+  padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__content--id {
+  color: var(--Green-300-pri);
+  letter-spacing: 0.7rem;
+  /* font-weight: 500; */
+}
+
+.card__content--desc {
+  letter-spacing: 0.2rem;
+
+  text-align: center;
+  color: var(--Blue-200-pri);
+}
+
+.card__content--line {
+  width: 100%;
+  height: 2rem;
+  /* margin: auto; */
+  background-image: url("./icons/icon-divider-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__icon-container {
+  cursor: pointer;
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  background-color: var(--Green-300-pri);
+  border-radius: 50%;
+
+  bottom: -19%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.2s ease-in-out;
+}
+
+.card__icon-container:hover {
+  box-shadow: 0 0 1.8rem 0.1rem var(--Green-300-pri);
+}
+
+.card__icon-container:active {
+  background-color: var(--Blue-200-pri);
+}
+
+.card__icon {
+  width: 2.5rem;
+}
+
+.attribution {
+  position: absolute;
+
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: var(--Blue-200-pri);
+  font-size: 1.6rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 1440px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 8px;
+  }
+
+  .card-container {
+    width: 90%;
+  }
+
+  .card__icon-container {
+    bottom: -12%;
+  }
+
+  .attribution {
+    display: none;
+  }
+
+  .card__content--line {
+    background-image: url("./images/pattern-divider-mobile.svg");
+  }
+}
+@media (max-width: 375px) {
+  html {
+    font-size: 6px;
+  }
+
+  .card-container {
+    height: 50%;
+  }
+}
